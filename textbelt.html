@@ -1,0 +1,46 @@
+<script type="text/x-red" data-template-name="textbelt">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-country"><i class="fa fa-wrench"></i> <span data-i18n="textbelt.label.country"></span></label>
+        <select type="text" id="node-input-operation" style="display: inline-block; vertical-align: top;">
+            <option value="text" data-i18n="textbelt.country.text"></option>
+            <option value="canada" data-i18n="textbelt.country.canada"></option>
+            <option value="intl" data-i18n="textbelt.country.intl"></option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-phone"><i class="fa fa-tag"></i> <span data-i18n="textbelt.label.phone"></span></label>
+        <input type="text" id="node-input-phone">
+    </div>
+    <div class="form-row">
+        <label for="node-input-field"><i class="fa fa-edit"></i> <span data-i18n="template.label.property"></span></label>
+        <input type="text" id="node-input-field" placeholder="payload" style="width:250px;">
+        <input type="hidden" id="node-input-fieldType">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('textbelt',{
+        category: 'output',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            country: {value:"text"},
+            phone: {value: ""},
+            field: {value: "payload"}
+        },
+        inputs:1,
+        outputs:0,
+        label: function() {
+            return this.name||"SMS";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-help-name="textbelt">
+    <p>This node sends and SMS using textbelt.com. By default the payload is sent as the message.
+    Override this by specifying <i>payload.message</i> or <i>topic</i></p>
+</script>

@@ -1,0 +1,23 @@
+{
+    "textbelt": {
+        "label": {
+            "country": "Country",
+            "phone": "Phone Number",
+            "property": "Message Property"
+        },
+
+        "country": {
+            "text": "United States",
+            "canada": "Canada",
+            "intl": "International"
+        },
+        "status": {
+            "connecting": "Connecting",
+            "success": "Success",
+            "failed": "Failed",
+            "timeout": "Timeout",
+            "notfound": "Server Not Found",
+            "msgEmpty": "Message empty"
+        }
+    }
+}
